@@ -4,7 +4,7 @@ Author: Matthew Angulo Caballero
 
 Juego modo historia basado en elden ring ( en terminal JAVA )
 
-![1677434588407](img/EldenRing.webp)
+![1677434588407](img/dhq32QGgZgKfsL4-McFdpW9xw1XUb1rQbXJA55XJEeY.webp)
 
 ## How to play
 
