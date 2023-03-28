@@ -80,7 +80,6 @@ public class Game {
             }
 
             do {
-
                 if (results[4] == true) {
                     results = death(results);
                 }else if (results[0]) {
@@ -90,15 +89,12 @@ public class Game {
                 } else if (results[2]) {
                     results = Chapters.Chapter3.chapter3(results);
                 }
-
             } while (!results[5]);
 
             if (results[5]) {
-                // "LIMPIAR PANTALLA"
-                for (int i = 0; i < 69; i++) {
-                    System.out.println();
-                }
-    
+                // !TERMINAL CLEAR
+                System.out.print("\033[H\033[2J");
+        
                 System.out.println("""
                       (,);    /\\                    
                      ((  ^_   ||            ...     
@@ -117,27 +113,27 @@ public class Game {
                         \\_(___)               _/Y\
                         
                     ⮕ INTRO para seguir
-                        """);
+                    """);
                 read.nextLine();
     
                 System.out.println("""
-                            (,);        ...
-                           ((  ^_.     (()))
-                            ' / /_\\    {' ())
-                              L( '}     )_ (()
-                               ) (_    (   (_)
-                             (_  / }{)===='_/
-                             | `/\\/\\     |   \\
-                             L___/ |     |    |
-                              |  . \\     |    |
-                              |_/ \\_\\    |    |
-                              ( ____ )   |    |
-                               | | | |   |    |
-                           ( --' | \\ |_  '~~~~'
-                           /_/---) (___)  _/Y
-                     
-                        ⮕ INTRO para seguir
-                        """);
+                        (,);        ...
+                       ((  ^_.     (()))
+                        ' / /_\\    {' ())
+                          L( '}     )_ (()
+                           ) (_    (   (_)
+                         (_  / }{)===='_/
+                         | `/\\/\\     |   \\
+                         L___/ |     |    |
+                          |  . \\     |    |
+                          |_/ \\_\\    |    |
+                          ( ____ )   |    |
+                           | | | |   |    |
+                       ( --' | \\ |_  '~~~~'
+                       /_/---) (___)  _/Y
+                    
+                    ⮕ INTRO para seguir
+                    """);
                 read.nextLine();
     
                 System.out.println("""
@@ -161,7 +157,7 @@ public class Game {
                          \\_(___)  _/Y
                                              
                     ⮕ INTRO para seguir
-                        """);
+                    """);
                 read.nextLine();
     
                 System.out.println("""
@@ -199,10 +195,8 @@ public class Game {
             ⮕ INTRO para seguir""");
         read.nextLine();
         results[4] = false;
-        //! "LIMPIAR PANTALLA"
-        for (int i = 0; i < 69; i++) {
-            System.out.println();
-        }
+        // !TERMINAL CLEAR
+        System.out.print("\033[H\033[2J");
         return results;
     }
 }

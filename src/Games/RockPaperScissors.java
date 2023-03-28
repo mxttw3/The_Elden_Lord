@@ -11,10 +11,8 @@ public class RockPaperScissors {
         int IA2 = 0, respuestaUser2 = 0, IApoints = 0, userpoints = 0;
         boolean correct; 
 
-        // "LIMPIAR PANTALLA"
-        for (int i = 0; i < 69; i++) {
-            System.out.println();
-        }
+        // !TERMINAL CLEAR
+        System.out.print("\033[H\033[2J");
 
         System.out.println("""
                            __                          ___
@@ -96,10 +94,8 @@ public class RockPaperScissors {
             }while (!correct);
 
 
-            // "LIMPIAR PANTALLA"
-            for (int j = 0; j < 69; j++) {
-                System.out.println();
-            }
+            // !TERMINAL CLEAR
+            System.out.print("\033[H\033[2J");
 
             System.out.println("""
                      $$$$$$\\ \s
@@ -114,10 +110,8 @@ public class RockPaperScissors {
             // ESPERA 1 SEC
             Thread.sleep(1000);
 
-            // "LIMPIAR PANTALLA"
-            for (int j = 0; j < 69; j++) {
-                System.out.println();
-            }
+            // !TERMINAL CLEAR
+            System.out.print("\033[H\033[2J");
 
             System.out.println("""
                      $$$$$$\\ \s
@@ -132,10 +126,9 @@ public class RockPaperScissors {
             // ESPERA 1 SEC
             Thread.sleep(1000);
 
-            // "LIMPIAR PANTALLA"
-            for (int j = 0; j < 69; j++) {
-                System.out.println();
-            }
+            // !TERMINAL CLEAR
+            System.out.print("\033[H\033[2J");
+
             System.out.println("""
                       $$\\    \s
                     $$$$ |   \s
@@ -149,10 +142,8 @@ public class RockPaperScissors {
             // ESPERA 1 SEC
             Thread.sleep(1000);
 
-            // "LIMPIAR PANTALLA"
-            for (int j = 0; j < 69; j++) {
-                System.out.println();
-            }
+            // !TERMINAL CLEAR
+            System.out.print("\033[H\033[2J");
 
             //Enseñar codigo ASCII del vector
             System.out.println("ENEMIGO: ");
@@ -243,10 +234,8 @@ public class RockPaperScissors {
 
             }while (userpoints != 3 && IApoints != 3);
 
-            // "LIMPIAR PANTALLA"
-            for (int j = 0; j < 69; j++) {
-                System.out.println();
-            }
+            // !TERMINAL CLEAR
+            System.out.print("\033[H\033[2J");
 
             // GANADOR DEL MEJOR DE 3
             System.out.println("""            

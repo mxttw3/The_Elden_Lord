@@ -11,10 +11,8 @@ public class Chapter2 {
         int userimput2 = 0;
         boolean correct; 
 
-        // "LIMPIAR PANTALLA"
-        for (int i = 0; i < 69; i++) {
-            System.out.println();
-        }
+        // !TERMINAL CLEAR
+        System.out.print("\033[H\033[2J");
 
         System.out.println("""
              ██████╗ █████╗ ██████╗ ██╗████████╗██╗   ██╗██╗      ██████╗     ██████╗
@@ -79,10 +77,8 @@ public class Chapter2 {
             ⮕ INTRO para seguir""");
         read.nextLine();
 
-        // "LIMPIAR PANTALLA"
-        for (int j = 0; j < 69; j++) {
-            System.out.println();
-        }
+        // !TERMINAL CLEAR
+        System.out.print("\033[H\033[2J");
 
         System.out.println("""            
             Ares: Hay una entrada principal pero también veo un sótano que lleva a la entrada sin que nos vean.
@@ -200,10 +196,9 @@ public class Chapter2 {
                 ⮕ INTRO para seguir""");
         read.nextLine();
 
-        // "LIMPIAR PANTALLA"
-        for (int i = 0; i < 69; i++) {
-            System.out.println();
-        }
+        // !TERMINAL CLEAR
+        System.out.print("\033[H\033[2J");
+        
         results = Games.RockPaperScissors.RockPaperScissorsGame(results);
         break;
     }while(true);

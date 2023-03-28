@@ -12,10 +12,8 @@ public class Chapter1 {
         int userimput = 0;
         
         while(bucle){
-        //! "LIMPIAR PANTALLA"
-        for (int i = 0; i < 69; i++) {
-            System.out.println();
-        }
+        // !TERMINAL CLEAR
+        System.out.print("\033[H\033[2J");
 
         System.out.println("""
              ██████╗ █████╗ ██████╗ ██╗████████╗██╗   ██╗██╗      ██████╗      ██╗
@@ -57,10 +55,8 @@ public class Chapter1 {
         ⮕ INTRO para seguir""");
         read.nextLine();
 
-        //! "LIMPIAR PANTALLA"
-        for (int i = 0; i < 69; i++) {
-            System.out.println();
-        }
+        // !TERMINAL CLEAR
+        System.out.print("\033[H\033[2J");
 
         System.out.println("""            
             Malentia: Bienvenido a las tierras intermedias. Pareces un gran caballero, como es su nombre?
@@ -81,10 +77,8 @@ public class Chapter1 {
             ⮕ INTRO para seguir""");
         read.nextLine();
 
-        //! "LIMPIAR PANTALLA"
-        for (int i = 0; i < 69; i++) {
-            System.out.println();
-        }
+        // !TERMINAL CLEAR
+        System.out.print("\033[H\033[2J");
 
         do {
             System.out.println("""
@@ -133,10 +127,8 @@ public class Chapter1 {
 
         read.nextLine();
 
-        //! "LIMPIAR PANTALLA"
-        for (int i = 0; i < 69; i++) {
-            System.out.println();
-        }
+        // !TERMINAL CLEAR
+        System.out.print("\033[H\033[2J");
 
         do {
             System.out.println("""
@@ -182,10 +174,8 @@ public class Chapter1 {
 
         read.nextLine();
 
-        //! "LIMPIAR PANTALLA"
-        for (int i = 0; i < 69; i++) {
-            System.out.println();
-        }
+        // !TERMINAL CLEAR
+        System.out.print("\033[H\033[2J");
 
         System.out.println("""
         El bosque de los elfos:
@@ -284,10 +274,8 @@ public class Chapter1 {
                  ⮕ INTRO para seguir""");
         read.nextLine();
 
-        //! "LIMPIAR PANTALLA"
-        for (int i = 0; i < 69; i++) {
-            System.out.println();
-        }
+        // !TERMINAL CLEAR
+        System.out.print("\033[H\033[2J");
 
         System.out.println("""            
             Puck: Me llamo Puck, y soy un elfo.
@@ -335,10 +323,8 @@ public class Chapter1 {
             read.nextLine();
         }
 
-        //! "LIMPIAR PANTALLA"
-        for (int i = 0; i < 69; i++) {
-            System.out.println();
-        }
+        // !TERMINAL CLEAR
+        System.out.print("\033[H\033[2J");
 
         // Eleccion de camino
         System.out.println("*Avanza por el bosque\n");
@@ -456,10 +442,8 @@ public class Chapter1 {
             ⮕ INTRO para seguir""");
         read.nextLine();
 
-        //! "LIMPIAR PANTALLA"
-        for (int i = 0; i < 69; i++) {
-            System.out.println();
-        }
+        // !TERMINAL CLEAR
+        System.out.print("\033[H\033[2J");
 
         Games.TicTacToe.TicTacToe(results);
         bucle = false;

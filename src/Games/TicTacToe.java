@@ -3,24 +3,18 @@ package Games;
 import java.util.Scanner;
 
 public class TicTacToe {
-    
     public static boolean[] TicTacToe(boolean results[]) throws InterruptedException {
         while(true){
-        // VARIABLES DEL MENU
         Scanner read = new Scanner(System.in);
-        boolean correct;
 
-        //VARIABLES DEL CAPITULO 1
-        boolean GAMEOVER = false, winner = false;
+        boolean GAMEOVER = false, winner = false, correct, booleanTie = false;
         int IA = 0, token = 0, respuestaUser = 0, respuestaIA = 0;
         char usr, maquina;
         int[][] WIN = { {0, 1, 2}, {3, 4, 5}, {6, 7, 8}, {0, 3, 6}, {1, 4, 7}, {2, 5, 8}, {0, 4, 8}, {2, 4, 6} };
 
 
-        // "LIMPIAR PANTALLA"
-        for (int i = 0; i < 69; i++) {
-            System.out.println();
-        }
+        // !TERMINAL CLEAR
+        System.out.print("\033[H\033[2J");
 
         System.out.println("""   
                    __                          ___
@@ -78,10 +72,8 @@ public class TicTacToe {
             maquina = '⭕';
         }
 
-        // "LIMPIAR PANTALLA"
-        for (int i = 0; i < 69; i++) {
-            System.out.println();
-        }
+        // !TERMINAL CLEAR
+        System.out.print("\033[H\033[2J");
 
         System.out.println("""            
             ┃━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┃
@@ -112,15 +104,34 @@ public class TicTacToe {
             read.nextLine();
         }
 
-        // "LIMPIAR PANTALLA"
-        for (int i = 0; i < 69; i++) {
-            System.out.println();
-        }
+        // !TERMINAL CLEAR
+        System.out.print("\033[H\033[2J");
+        
         GAMEOVER = false;
         winner = false;
         char[] tablero = new char[]{'0', '1', '2', '3', '4', '5', '6', '7', '8'};
 
+
+
         do {
+            //!Comprobar si hay empate
+            if (tie(tablero)) {
+                booleanTie = true;
+                break;
+            }
+
+            // tie = 0;
+            // for (int i = 0; i < 9; i++) {
+            //     if (tablero[i] == '❌' || tablero[i] == '⭕'){
+            //         tie++;
+            //     }
+            // }
+    
+            // if (tie == 9) {
+            //     booleanTie = true;
+            //     break;
+            // }
+
             //TURNO DE LA IA
             if (IA == 0){
                 System.out.println("""
@@ -153,6 +164,12 @@ public class TicTacToe {
                         break;
                     }
                 }
+            }
+
+            //!Comprobar si hay empate
+            if (tie(tablero)) {
+                booleanTie = true;
+                break;
             }
 
             // TURNO DEL USUARIO
@@ -204,65 +221,93 @@ public class TicTacToe {
                     break;
                 }
             }
-
         }while (!GAMEOVER);
 
-        // VER GANADORES
-        for (int[] condicion : WIN) {
-            if (tablero[condicion[0]] == '❌' && tablero[condicion[1]] == '❌' && tablero[condicion[2]] == '❌') {
-                winner = true;
-                break;
+
+
+        if (booleanTie) {
+            System.out.println("""            
+                ┃━━━━━━━━━━┃
+                ┃  EMPATE! ┃
+                ┃━━━━━━━━━━┃
+
+                ⮕ INTRO para seguir""");
+            read.nextLine();
+            results[4] = true;
+            break;
+        }else{
+            // VER GANADORES
+            for (int[] condicion : WIN) {
+                if (tablero[condicion[0]] == '❌' && tablero[condicion[1]] == '❌' && tablero[condicion[2]] == '❌') {
+                    winner = true;
+                    break;
+                }
             }
-        }
-
-        if (token == 1){
-            if (winner) {
-                System.out.println("""            
-                    ┃━━━━━━━━━━━━━┃
-                    ┃  GAME OVER  ┃
-                    ┃━━━━━━━━━━━━━┃
-
-                    ⮕ INTRO para seguir""");
-                read.nextLine();
-                results[4] = true;
-                break;
+    
+            if (token == 1){
+                if (winner) {
+                    System.out.println("""            
+                        ┃━━━━━━━━━━━━━┃
+                        ┃  GAME OVER  ┃
+                        ┃━━━━━━━━━━━━━┃
+    
+                        ⮕ INTRO para seguir""");
+                    read.nextLine();
+                    results[4] = true;
+                    break;
+                }else {
+                    System.out.println("""            
+                        ┃━━━━━━━━━━━━━━━━━━┃
+                        ┃  ¡¡HAS GANADO!!  ┃
+                        ┃━━━━━━━━━━━━━━━━━━┃
+    
+                        ⮕ INTRO para seguir""");
+                    read.nextLine();
+                    results[0] = false;
+                    results[1] = true;
+                    break;
+                }
             }else {
-                System.out.println("""            
-                    ┃━━━━━━━━━━━━━━━━━━┃
-                    ┃  ¡¡HAS GANADO!!  ┃
-                    ┃━━━━━━━━━━━━━━━━━━┃
-
-                    ⮕ INTRO para seguir""");
-                read.nextLine();
-                results[0] = false;
-                results[1] = true;
-                break;
-            }
-        }else {
-            if (winner) {
-                System.out.println("""            
-                    ┃━━━━━━━━━━━━━━━━━━┃
-                    ┃  ¡¡HAS GANADO!!  ┃
-                    ┃━━━━━━━━━━━━━━━━━━┃
-
-                    ⮕ INTRO para seguir""");
-                read.nextLine();
-                results[0] = false;
-                results[1] = true;
-                break;
-            }else {
-                System.out.println("""            
-                    ┃━━━━━━━━━━━━━┃
-                    ┃  GAME OVER  ┃
-                    ┃━━━━━━━━━━━━━┃
-
-                    ⮕ INTRO para seguir""");
-                read.nextLine();
-                results[4] = true;
-                break;
+                if (winner) {
+                    System.out.println("""            
+                        ┃━━━━━━━━━━━━━━━━━━┃
+                        ┃  ¡¡HAS GANADO!!  ┃
+                        ┃━━━━━━━━━━━━━━━━━━┃
+    
+                        ⮕ INTRO para seguir""");
+                    read.nextLine();
+                    results[0] = false;
+                    results[1] = true;
+                    break;
+                }else {
+                    System.out.println("""            
+                        ┃━━━━━━━━━━━━━┃
+                        ┃  GAME OVER  ┃
+                        ┃━━━━━━━━━━━━━┃
+    
+                        ⮕ INTRO para seguir""");
+                    read.nextLine();
+                    results[4] = true;
+                    break;
+                }
             }
         }
     }
     return results;
+    }
+
+    public static boolean tie(char[] tablero) {
+        //Comprobar si hay empate
+        int tie = 0;
+        for (int i = 0; i < 9; i++) {
+            if (tablero[i] == '❌' || tablero[i] == '⭕'){
+                tie++;
+            }
+        }
+        if (tie == 9) {
+            return true;
+        }else {
+            return false;
+        }
     }
 }

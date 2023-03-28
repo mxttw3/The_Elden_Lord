@@ -12,10 +12,8 @@ public class BlackJack {
             boolean reinicioRonda, playerfinish = false, gameover = false;
             int[] cardPoints = {2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 1,2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 1,2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 1,2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 1};
 
-            // "LIMPIAR PANTALLA"
-            for (int j = 0; j < 69; j++) {
-                System.out.println();
-            }
+            // !TERMINAL CLEAR
+            System.out.print("\033[H\033[2J");
 
             System.out.println("""           
                        __                          _____
@@ -371,10 +369,8 @@ public class BlackJack {
                 reinicioRonda = false;
                 playerfinish = false;
                 gameover = false;
-                // "LIMPIAR PANTALLA"
-                for (int j = 0; j < 69; j++) {
-                    System.out.println();
-                }
+                // !TERMINAL CLEAR
+                System.out.print("\033[H\033[2J");
 
                 //Comienzo del juego
                 if (rounds == 1) {
@@ -495,10 +491,8 @@ public class BlackJack {
                 rounds++;
             }while (roundIApoints != 5 && userRoundPoints != 5);
 
-            // "LIMPIAR PANTALLA"
-            for (int j = 0; j < 69; j++) {
-                System.out.println();
-            }
+            // !TERMINAL CLEAR
+            System.out.print("\033[H\033[2J");
 
             if (userRoundPoints > roundIApoints) {
                 System.out.println("""            

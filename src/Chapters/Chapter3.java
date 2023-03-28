@@ -8,11 +8,9 @@ public class Chapter3 {
         boolean bucle = true;
         Scanner read = new Scanner(System.in);
 
-        do{ 
-        // "LIMPIAR PANTALLA"
-        for (int i = 0; i < 69; i++) {
-            System.out.println();
-        }
+        do{
+        // !TERMINAL CLEAR
+        System.out.print("\033[H\033[2J");
 
         System.out.println("""
                          ██████╗ █████╗ ██████╗ ██╗████████╗██╗   ██╗██╗      ██████╗     ██████╗
@@ -85,10 +83,8 @@ public class Chapter3 {
             read.nextLine();
         }
 
-        // "LIMPIAR PANTALLA"
-        for (int i = 0; i < 69; i++) {
-            System.out.println();
-        }
+        // !TERMINAL CLEAR
+        System.out.print("\033[H\033[2J");
 
         System.out.println("*Abriendo puerta\n");
         Thread.sleep(2000);
@@ -150,10 +146,8 @@ public class Chapter3 {
             """);
         read.nextLine();
 
-        // "LIMPIAR PANTALLA"
-        for (int j = 0; j < 69; j++) {
-            System.out.println();
-        }
+        // !TERMINAL CLEAR
+        System.out.print("\033[H\033[2J");
 
         System.out.print("""
              ▐▄▄▄ ▄▄▄·
@@ -166,10 +160,8 @@ public class Chapter3 {
         // ESPERA 1 SEC
         Thread.sleep(850);
 
-        // "LIMPIAR PANTALLA"
-        for (int j = 0; j < 69; j++) {
-            System.out.println();
-        }
+        // !TERMINAL CLEAR
+        System.out.print("\033[H\033[2J");
 
         System.out.print("""
              ▐▄▄▄ ▄▄▄·
@@ -181,10 +173,9 @@ public class Chapter3 {
         // ESPERA 1 SEC
         Thread.sleep(850);
 
-        // "LIMPIAR PANTALLA"
-        for (int j = 0; j < 69; j++) {
-            System.out.println();
-        }
+        // !TERMINAL CLEAR
+        System.out.print("\033[H\033[2J");
+
         System.out.println("""
              ▐▄▄▄ ▄▄▄·
               ·██▐█ ▀█
@@ -195,10 +186,8 @@ public class Chapter3 {
         // ESPERA 1 SEC
         Thread.sleep(850);
 
-        // "LIMPIAR PANTALLA"
-        for (int j = 0; j < 69; j++) {
-            System.out.println();
-        }
+        // !TERMINAL CLEAR
+        System.out.print("\033[H\033[2J");
 
         System.out.println("""
                                 
@@ -222,10 +211,9 @@ public class Chapter3 {
             ⮕ INTRO para seguir""");
         read.nextLine();
 
-        // "LIMPIAR PANTALLA"
-        for (int j = 0; j < 69; j++) {
-            System.out.println();
-        }
+        // !TERMINAL CLEAR
+        System.out.print("\033[H\033[2J");
+
         results = Games.BlackJack.BlackJackGame(results);
         bucle = false;
     }while (bucle);
